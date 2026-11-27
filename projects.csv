@@ -1,0 +1,11 @@
+project_id,title,needs,capacity,appeal
+P01,Data Dashboard,Data analysis;Python,4,0.9
+P02,Web Portal,Web;Design,4,0.5
+P03,Chatbot Helper,Python;Communication,3,1.0
+P04,Learning Content,Writing;Design,5,0.3
+P05,Survey Analysis,Data analysis;Writing,5,0.4
+P06,Mobile App,Web;Python,3,0.8
+P07,Community Outreach,Communication;Writing,6,0.2
+P08,UX Research,Design;Communication,5,0.5
+P09,Automation Scripts,Python;Data analysis,5,0.6
+P10,Social Media Campaign,Writing;Communication;Design,4,0.4
