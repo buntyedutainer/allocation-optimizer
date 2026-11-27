@@ -1,0 +1,5 @@
+,average happiness,top-1 %,top-3 %,not on their list %,worst rank,lowest happiness
+Random (any project),3.3,7.5,27.5,57.5,6.0,0.0
+Random (listed only),4.8,17.5,27.5,7.5,6.0,1.0
+Greedy (any project),4.8,15.0,30.0,17.5,6.0,1.0
+Greedy (listed only),4.8,15.0,30.0,17.5,6.0,1.0
