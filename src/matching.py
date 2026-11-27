@@ -70,3 +70,23 @@ def summary(out):
             "not on their list %": 100 * (out["rank"] == UNLISTED_RANK).mean(),
             "worst rank": int(out["rank"].max()),
             "lowest happiness": out["score"].min()}
+
+
+def match_optimal(score, rank_table, capacity, listed_only=True, penalty=100.0):
+    """The assignment with the highest total happiness (Hungarian method on a seat table)."""
+    from scipy.optimize import linear_sum_assignment
+    seats = [p for p in capacity.index for _ in range(int(capacity[p]))]      # one column per seat
+    values = score[seats].values.astype(float)                                # students x seats
+    if listed_only:
+        unlisted = (rank_table[seats].values == UNLISTED_RANK)
+        values = values - penalty * unlisted               # a heavy fine for unlisted projects, so they are used only if forced
+    rows, cols = linear_sum_assignment(values, maximize=True)
+    return pd.Series({score.index[r]: seats[c] for r, c in zip(rows, cols)})
+
+
+def objective(assign, score, rank_table, listed_only=True, penalty=100.0):
+    """What the optimal method maximises: total happiness, minus a fine for each unlisted placement."""
+    total = sum(score.loc[s, p] for s, p in assign.items())
+    if listed_only:
+        total -= penalty * sum(rank_table.loc[s, p] == UNLISTED_RANK for s, p in assign.items())
+    return total
