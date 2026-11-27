@@ -1,0 +1,7 @@
+metric,good direction,average difference,95% interval,Optimal better in,tied,clearly different?
+average happiness,higher,0.87,0.85 to 0.90,30 of 30,0,yes
+top-1 %,higher,6.59,5.88 to 7.31,30 of 30,0,yes
+top-3 %,higher,12.19,11.09 to 13.29,30 of 30,0,yes
+not on their list %,lower,-10.77,-11.86 to -9.71,30 of 30,0,yes
+worst rank,lower,0.0,0.00 to 0.00,0 of 30,30,no
+lowest happiness,higher,0.76,0.62 to 0.90,29 of 30,0,yes
